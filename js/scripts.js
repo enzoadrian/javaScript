@@ -5,7 +5,7 @@ function agregarAlCarrito(producto, stock){
     console.log("agregaste al carrito " + producto)}
 
     else
-    {console.log("Lo siento , no nos quedo stock de este producto")}
+    {console.log("Lo siento , no nos quedo " + producto)}
 }
 
 function hayStock(stock){
@@ -16,7 +16,7 @@ function hayStock(stock){
         return "no nos queda stock"
     }
 }
-agregarAlCarrito("zapatillas", 10);
-agregarAlCarrito("gorra", 5);
-agregarAlCarrito("campera", 1);
-agregarAlCarrito("buzo",0);
+agregarAlCarrito("zapatillas air force", 10);
+agregarAlCarrito("gorra NB", 0);
+agregarAlCarrito("campera Norton", 1);
+agregarAlCarrito("buzo Canguro",0);
