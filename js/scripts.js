@@ -16,7 +16,16 @@ function hayStock(stock){
         return "no nos queda stock"
     }
 }
-agregarAlCarrito("zapatillas air force", 10);
-agregarAlCarrito("gorra NB", 0);
-agregarAlCarrito("campera Norton", 1);
-agregarAlCarrito("buzo Canguro",0);
+let stockZapatillas = prompt("cuantas zapatillas hay en stock?")
+let stockGorras = prompt("cuantos gorras hay en stock")
+let stockCamperas = prompt("cuantas camperas hay en  stock ")
+const productos = ["zapatillas air force","gorra NB","campera norton"]
+
+for(let i =0;i<3;i++){console.log(productos[i])
+    
+}
+
+    
+agregarAlCarrito("zapatillas air force",stockZapatillas);
+agregarAlCarrito("gorra NB", stockGorras);
+agregarAlCarrito("campera norton", stockCamperas)
