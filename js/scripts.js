@@ -1,5 +1,5 @@
 
-const carrito= JSON.parse(localStorage.getItem("carrito")) ??[];
+const carrito= JSON.parse(localStorage.getItem("carrito")) || []; //uso de operaror orgi
  document.getElementById("cart-number").innerHtml = carrito.length;
  
 const ropa = [
@@ -56,6 +56,7 @@ function filtrarPorCategoria(categoria){
 
 // funcion para mostrar los elementos del carrito
   function mostrarCarrito(){
+    carrito.length === 0 ? alert(" no tienes productos en el carrito") : alert("gracias por llevar nuestros productos")//operador ternario
     document.getElementById("cardsModal").innerHTML = "" 
     carrito.forEach((producto) =>
     {document.getElementById("cardsModal").innerHTML +=
@@ -65,6 +66,7 @@ function filtrarPorCategoria(categoria){
    <p>$${producto.precio}</p>
    <button type="button" onclick="borrarDelCarrito(${producto.id})">borrar producto </button>
    </div>`
+   
   })}
 
 
