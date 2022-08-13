@@ -1,6 +1,9 @@
 
-const carrito= JSON.parse(localStorage.getItem("carrito")) || []; //uso de operaror orgi
- document.getElementById("cart-number").innerHtml = carrito.length;
+const carrito= JSON.parse(localStorage.getItem("carrito")) ?? []; 
+const total= carrito.reduce((acc,producto) =>acc + producto.precio ,0);
+localStorage.setItem("carrito", JSON.stringify(carrito));
+document.getElementById("cart-number").innerHTML = carrito.length + " - $"+total;
+ 
  
 const ropa = [
     {id:1,nombre:"zapatillas air force",img:"https://essential.vtexassets.com/arquivos/ids/571599-500-auto?v=637909172164170000&width=500&height=auto&aspect=true", precio: 23000,categoria:"zapatillas" },
@@ -32,8 +35,9 @@ productos.forEach((producto) =>{
     const idBoton = `agregarCarrito ${producto.id}`
     document.getElementById(idBoton).addEventListener  ('click',() => {
         carrito.push(producto);
+        const total= carrito.reduce((acc,producto) =>acc + producto.precio ,0);
         localStorage.setItem("carrito", JSON.stringify(carrito));
-        document.getElementById("cart-number").innerHTML = carrito.length; 
+        document.getElementById("cart-number").innerHTML = carrito.length + " - $"+total;
       } )
         })
 
@@ -56,7 +60,6 @@ function filtrarPorCategoria(categoria){
 
 // funcion para mostrar los elementos del carrito
   function mostrarCarrito(){
-    carrito.length === 0 ? alert(" no tienes productos en el carrito") : alert("gracias por llevar nuestros productos")//operador ternario
     document.getElementById("cardsModal").innerHTML = "" 
     carrito.forEach((producto) =>
     {document.getElementById("cardsModal").innerHTML +=
@@ -64,19 +67,25 @@ function filtrarPorCategoria(categoria){
    <p> ${producto.nombre}</p>
    <img src="${producto.img}" style="width:80px">
    <p>$${producto.precio}</p>
-   <button type="button" onclick="borrarDelCarrito(${producto.id})">borrar producto </button>
+   <button id="botonEliminar" type="button" onclick="borrarDelCarrito(${producto.id})">borrar producto </button>
    </div>`
-   
   })}
 
 
-   
    //funcion para borrar elementos del carrito
    function borrarDelCarrito(idProducto) {
        const index = carrito.findIndex((producto) => producto.id === idProducto)
        if (index != -1){
        carrito.splice(index, 1)}
        console.log(index)
-     
+       mostrarCarrito()
+       const total= carrito.reduce((acc,producto) =>acc + producto.precio ,0);
+       localStorage.setItem("carrito", JSON.stringify(carrito));
+       document.getElementById("cart-number").innerHTML = carrito.length + " - $"+total;
       }
-       console.log(productos)
+
+
+      
+       /* function comprar(){
+    document.getElementById("botonComprar").addEventListener  ('click',() => {
+      alert("Gracias por su compra")})} */
