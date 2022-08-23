@@ -18,7 +18,13 @@ const accesorios = [
 ropa.push({id:6, nombre:"Buzo tyson",img:"https://http2.mlstatic.com/D_NQ_NP_621591-MLA45417531268_042021-O.webp", precio: 9500,categoria:"ropa"  })
 
 const productos = ropa.concat(accesorios)
-
+//usando fetch para mostrar los productos en "determinados lugares"(en este caso puntual en la consola)
+const mostrarProductos=()=>{
+  fetch('productos.json')
+  .then (response => response.json())
+    .then (info => {console.log(info)
+})}
+mostrarProductos()
 
 productos.forEach((producto) => {
     const idBoton = `agregarCarrito ${producto.id}`
@@ -87,7 +93,7 @@ function filtrarPorCategoria(categoria){
        document.getElementById("cart-number").innerHTML = carrito.length + " - $"+total;
       }
 
-      
+    
  function comprar(){
       {Swal.fire({
         icon: 'success',
