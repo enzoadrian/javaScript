@@ -7,8 +7,8 @@ document.getElementById("cart-number").innerHTML = carrito.length + " - $"+total
  
 const ropa = [
     {id:1,nombre:"Zapatillas air force",img:"https://essential.vtexassets.com/arquivos/ids/571599-500-auto?v=637909172164170000&width=500&height=auto&aspect=true", precio: 23000,categoria:"zapatillas" },
-    {id:2, nombre:"Remera toronto",img:"https://http2.mlstatic.com/D_NQ_NP_675234-MLA45098508489_032021-O.webp", precio: 2500,categoria:"ropa"  },
-    {id:3, nombre:"Campera norton",img:"https://lamoto.com.ar/wp-content/uploads/2019/08/CITY_NEGRA_FRENTE.jpg", precio: 15000,categoria:"ropa" }
+    {id:2, nombre:"Remeras toronto",img:"https://http2.mlstatic.com/D_NQ_NP_675234-MLA45098508489_032021-O.webp", precio: 2500,categoria:"ropa"  },
+    {id:3, nombre:"Camperas norton",img:"https://lamoto.com.ar/wp-content/uploads/2019/08/CITY_NEGRA_FRENTE.jpg", precio: 15000,categoria:"ropa" }
 ]
 const accesorios = [
     {id:4,nombre:"Gorra NB",img:"https://www.newbalance.com.ar/media/catalog/product/cache/4/thumbnail/9df78eab33525d08d6e5fb8d27136e95/m/h/mh734103bk_2.jpg", precio: 1600,categoria:"accesorios"  },
