@@ -11301,7 +11301,28 @@ body{
   display:flex;
   flex-direction: column;
   align-items: center;
+  width:360px;
+  height: 380px;
+
 }
 .tituloCard{
   font-size: 20px;
 }
+#imgCards{
+  width:350px ;
+height:270px ;
+border-bottom: solid 2px #000;
+}
+#imgCarrito{
+  width:100px ;
+height:100px ;
+}
+#cardsProducts{
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr,1fr;
+  justify-items: center;
+  align-items: center;
+}
+body{min-height: 780px;}
